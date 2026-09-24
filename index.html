@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suivi REVA d’un enfant prématuré à 18 mois — APF France handicap</title>
+
+<style>
+
+/* =========================================================
+   APF FRANCE HANDICAP — CHARTE GRAPHIQUE
+   ========================================================= */
+
+:root {
+    --apf-blue: #0057A8;
+    --apf-blue-dark: #003F7A;
+    --apf-purple: #5B2A86;
+    --apf-cyan: #35A8D8;
+    --apf-yellow: #F7C600;
+    --apf-orange: #F28C28;
+
+    --text: #263746;
+    --muted: #687887;
+    --background: #EEF3F6;
+    --white: #FFFFFF;
+    --border: #D9E2E8;
+
+    --shadow: 0 16px 45px rgba(25,55,80,.12);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(53,168,216,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(91,42,134,.08),
+            transparent 25%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.65;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+/* =========================================================
+   BARRE SUPÉRIEURE
+   ========================================================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 12px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: var(--apf-blue-dark);
+}
+
+.brand-logo {
+    width: 180px;
+    height: 65px;
+
+    background-image:
+        url("3Logo-90a-Quadri-RI signature.jpg");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.brand-subtitle {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: .78rem;
+
+    font-weight: 500;
+}
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    justify-content: flex-end;
+}
+
+.btn {
+    appearance: none;
+
+    border: 0;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 17px;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(25,55,80,.16);
+}
+
+.btn-primary {
+    background: var(--apf-blue);
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--apf-blue-dark);
+}
+
+.btn-secondary {
+    background: white;
+
+    color: var(--apf-blue-dark);
+
+    border: 1px solid #C9D8E3;
+}
+
+.btn-accent {
+    background: var(--apf-purple);
+
+    color: white;
+}
+
+.btn-accent:hover {
+    background: #49206D;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    max-width: 1180px;
+
+    margin: 34px auto 24px;
+
+    padding: 0 22px;
+}
+
+.hero-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    color: white;
+
+    padding: 44px 46px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(247,198,0,.34),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 72% 80%,
+            rgba(53,168,216,.34),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #004E92,
+            #5B2A86
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.hero-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    right: -80px;
+    bottom: -130px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+
+    letter-spacing: .11em;
+
+    font-size: .78rem;
+
+    font-weight: 800;
+
+    color: #F8DF65;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem,4vw,3.3rem);
+
+    line-height: 1.08;
+
+    margin: 0 0 16px;
+
+    max-width: 850px;
+}
+
+.hero-description {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,.9);
+
+    font-size: 1.04rem;
+}
+
+.meta {
+    margin-top: 22px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.meta span {
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    font-size: .86rem;
+}
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.container {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 0 22px 60px;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.notice {
+    border-left:
+        5px solid var(--apf-orange);
+
+    background: #FFF9EF;
+
+    padding: 16px 18px;
+
+    border-radius: 12px;
+
+    margin: 20px 0 26px;
+
+    color: #5C4A31;
+}
+
+.notice strong {
+    color: #493A27;
+}
+
+.notice p {
+    margin: 6px 0 0;
+}
+
+/* =========================================================
+   PAGES DU DOCUMENT
+   ========================================================= */
+
+.document-page {
+    position: relative;
+
+    background: white;
+
+    margin: 0 auto 26px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(0,0,0,.04);
+}
+
+.document-page::before {
+    content: "";
+
+    display: block;
+
+    height: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--apf-blue),
+            var(--apf-cyan),
+            var(--apf-purple),
+            var(--apf-yellow)
+        );
+}
+
+.page-label {
+    display: inline-block;
+
+    margin: 20px 28px 0;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #EDF5FB;
+
+    color: var(--apf-blue-dark);
+
+    font-size: .76rem;
+
+    font-weight: 800;
+}
+
+.page-content {
+    padding: 10px 52px 45px;
+}
+
+.page-content p {
+    margin: 0 0 13px;
+}
+
+.page-content h2 {
+    color: var(--apf-blue-dark);
+
+    font-size: 1.13rem;
+
+    margin: 27px 0 10px;
+
+    padding-left: 13px;
+
+    border-left:
+        4px solid var(--apf-cyan);
+}
+
+.page-content ul {
+    margin: 8px 0 18px 22px;
+}
+
+.page-content li {
+    margin: 6px 0;
+
+    padding-left: 3px;
+}
+
+.lead {
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    color: var(--apf-blue-dark);
+}
+
+/* =========================================================
+   FORMULAIRE QUESTIONS
+   ========================================================= */
+
+.question {
+    margin: 34px 0 0;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow: var(--shadow);
+
+    border:
+        1px solid var(--border);
+}
+
+.question h2 {
+    margin-top: 0;
+
+    color: var(--apf-purple);
+}
+
+.question-intro {
+    color: var(--muted);
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+
+    font-size: .86rem;
+
+    font-weight: 700;
+
+    color: #465968;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    margin-top: 6px;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid #CCD8DF;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    color: var(--text);
+
+    background: #FBFDFE;
+
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--apf-blue);
+
+    box-shadow:
+        0 0 0 3px rgba(0,87,168,.10);
+}
+
+textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 14px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: .84rem;
+
+    padding: 24px 20px 40px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .topbar-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .actions {
+        justify-content: flex-start;
+    }
+
+    .brand-logo {
+        width: 160px;
+    }
+
+    .hero-card {
+        padding: 30px 24px;
+
+        border-radius: 20px;
+    }
+
+    .page-content {
+        padding:
+            10px
+            24px
+            34px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   IMPRESSION
+   ========================================================= */
+
+@media print {
+
+    .topbar,
+    .question,
+    .notice,
+    .footer {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .hero-card,
+    .document-page {
+        box-shadow: none;
+    }
+
+    .document-page {
+        break-inside: avoid;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =======================================================
+     EN-TÊTE
+     ======================================================= -->
+
+<header class="topbar">
+
+    <div class="topbar-inner">
+
+        <div class="brand">
+
+            <div
+                class="brand-logo"
+                aria-label="Logo officiel APF France handicap">
+            </div>
+
+            <div>
+
+                <div class="brand-title">
+                    Pôle Enfance
+                </div>
+
+                <span class="brand-subtitle">
+                    Support documentaire
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            class="actions"
+            aria-label="Actions du document">
+
+            <a
+                class="btn btn-primary"
+                href="Suivi REVA d'un enfant prématuré à 18 mois-meeting_minutes.pdf"
+                download>
+                ⬇ Télécharger le document PDF
+            </a>
+
+            <a
+                class="btn btn-accent"
+                href="#question">
+                ✉ Poser une question
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =======================================================
+     CONTENU PRINCIPAL
+     ======================================================= -->
+
+<main>
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<section class="hero">
+
+    <div class="hero-card">
+
+        <div class="eyebrow">
+            Suivi REVA
+        </div>
+
+        <h1>
+            Suivi REVA d’un enfant prématuré à 18 mois
+        </h1>
+
+        <p class="hero-description">
+            Compte-rendu de consultation de suivi du 07/09/2026 —
+            document présenté dans une mise en page adaptée à
+            l’environnement graphique APF France handicap.
+        </p>
+
+        <div class="meta">
+
+            <span>CAMSP</span>
+
+            <span>REVA</span>
+
+            <span>Consultation de suivi</span>
+
+            <span>18 mois d’âge corrigé</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- =======================================================
+     INFORMATION
+     ======================================================= -->
+
+<div class="notice">
+
+    <strong>
+        Points à compléter / vérifier dans le document source
+    </strong>
+
+    <p>
+        Le compte-rendu comporte plusieurs mentions signalées
+        comme « INFORMATION À COMPLÉTER » ou
+        « INCOHÉRENCE À VÉRIFIER ». Elles ont été conservées
+        dans cette version HTML.
+    </p>
+
+</div>
+
+
+<!-- =======================================================
+     PAGE 1
+     ======================================================= -->
+
+<section class="document-page">
+
+    <div class="page-label">
+        Page 1
+    </div>
+
+    <div class="page-content">
+
+        <p class="lead">
+            Suivi REVA d’un enfant prématuré à 18 mois
+        </p>
+
+        <h2>
+            Compte-rendu exécutif
+        </h2>
+
+        <p>
+            Date : 07/09/2026 16:34
+        </p>
+
+        <p>
+            Dicte.ai
+        </p>
+
+        <p>
+            Author : Layla de Dicte.ai
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 2
+     ======================================================= -->
+
+<section class="document-page">
+
+    <div class="page-label">
+        Page 2
+    </div>
+
+    <div class="page-content">
+
+        <h2>
+            COMPTE-RENDU DE CONSULTATION DE SUIVI DU 07/09/2026
+        </h2>
+
+        <p>
+            <strong>
+                Dr Renaud Chambon
+            </strong>
+        </p>
+
+        <p>
+            Courrier adressé :
+            [INFORMATION À COMPLÉTER : DESTINATAIRES DU COURRIER]
+        </p>
+
+        <p>
+            Chers Confrères,
+        </p>
+
+        <p>
+            J’ai revu ce jour en consultation de suivi REVA
+            Maelyn PEYMAU, née le 06/11/2024, âgée de 1 an
+            10 mois, âge corrigé 1 an 7 mois, accompagnée
+            de ses parents. Maelyn est suivie dans le cadre
+            du réseau REVA en lien avec une prématurité à
+            28 SA et 1 jour.
+        </p>
+
+        <h2>
+            POUR RAPPEL :
+        </h2>
+
+        <p>
+            Maelyn a été vue en première consultation en mars
+            2025, après une rencontre avancée en janvier de
+            la même année. Elle a ensuite été revue en
+            consultation systématique des six mois d’âge
+            corrigé par l’orthophoniste et la kinésithérapeute
+            en août 2025, qui ne retrouvaient pas d’inquiétude
+            particulière.
+        </p>
+
+        <p>
+            Je l’avais moi-même revue en
+            [INCOHÉRENCE À VÉRIFIER : LA DICTÉE MENTIONNE
+            « JANVIER NOVEMBRE 2025 » POUR LA DATE DE LA
+            CONSULTATION MÉDICALE ANTÉRIEURE ; PRÉCISER SI
+            IL S’AGIT DE JANVIER OU DE NOVEMBRE 2025],
+            avec un examen vain.
+        </p>
+
+        <p>
+            Je revois donc Maelyn pour le contrôle des 18 mois
+            d’âge corrigé dans le cadre du suivi systématique.
+        </p>
+
+        <h2>
+            DEPUIS LA DERNIÈRE CONSULTATION DU
+            [INFORMATION À COMPLÉTER :
+            DATE DE LA DERNIÈRE CONSULTATION MÉDICALE] :
+        </h2>
+
+        <p>
+            <strong>Au CAMSP :</strong>
+        </p>
+
+        <p>
+            La consultation systématique des six mois d’âge
+            corrigé a été réalisée en août 2025 par
+            l’orthophoniste et la kinésithérapeute.
+        </p>
+
+        <p>
+            <strong>
+                Bilan orthophonique du 08/2025
+            </strong>
+        </p>
+
+        <p>
+            Conclusion :
+            « [SECRÉTARIAT — INSÉRER ICI LA CONCLUSION DU
+            BILAN ORTHOPHONIQUE] »
+        </p>
+
+        <p>
+            <strong>
+                Bilan kinésithérapique du 08/2025
+            </strong>
+        </p>
+
+        <p>
+            Conclusion :
+            « [SECRÉTARIAT — INSÉRER ICI LA CONCLUSION DU
+            BILAN KINÉSITHÉRAPIQUE] »
+        </p>
+
+        <h2>
+            ÉVOLUTION NOTÉE PAR LA FAMILLE :
+        </h2>
+
+        <h2>
+            Au niveau du langage et de la communication
+        </h2>
+
+        <p>
+            Le langage verbal reste encore assez peu développé,
+            avec de très rares mots utilisés pas encore de manière
+            systématique.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 3
+     ======================================================= -->
+
+<section class="document-page">
+
+    <div class="page-label">
+        Page 3
+    </div>
+
+    <div class="page-content">
+
+        <h2>
+            Au niveau du langage et de la communication
+        </h2>
+
+        <p>
+            En revanche, le langage non-verbal est bien en place :
+            Maelyn peut pointer, l’attention conjointe est présente,
+            elle peut amener un objet pour obtenir de l’aide.
+            Sa compréhension est bonne et elle comprend les
+            consignes. Les gestes simples comme « non »,
+            « au revoir », « bravo » sont possibles.
+        </p>
+
+        <h2>
+            Au niveau de la motricité
+        </h2>
+
+        <p>
+            La marche a été acquise en mai dernier. Maelyn est
+            maintenant à l’aise dans sa motricité : elle peut
+            marcher, s’accroupir, elle aime grimper partout et
+            a une activité motrice. Elle monte et descend les
+            escaliers debout en donnant la main.
+        </p>
+
+        <h2>
+            Au niveau des intérêts et des jeux
+        </h2>
+
+        <p>
+            Elle aime principalement bouger et se déplacer.
+            Elle a encore du mal à se poser longtemps sur une
+            activité. Elle commence les jeux d’imitation.
+        </p>
+
+        <h2>
+            Au niveau de l’alimentation
+        </h2>
+
+        <p>
+            L’introduction des morceaux s’est bien passée.
+            Elle mange varié. Elle a tendance à encore
+            facilement jouer avec la nourriture. Elle peut
+            commencer à manger seule avec la main ou la cuillère.
+        </p>
+
+        <h2>
+            Au niveau du sommeil
+        </h2>
+
+        <p>
+            Le sommeil est un peu variable, mais elle dort
+            plutôt bien. Il peut y avoir un réveil avec des
+            pleurs vers 4-5 heures, mais elle se rendort seule.
+            Elle fait une sieste, qui semble de moins en moins
+            nécessaire.
+        </p>
+
+        <h2>
+            Au niveau de la socialisation et de la scolarisation
+        </h2>
+
+        <p>
+            Elle est pour l’instant gardée uniquement à la maison.
+            La famille se questionne sur une éventuelle entrée
+            en crèche avant l’entrée à l’école maternelle, qui
+            aura lieu en septembre 2027.
+        </p>
+
+        <h2>
+            Au niveau de l’autonomie
+        </h2>
+
+        <p>
+            Elle commence à se déshabiller seule et aide pour
+            l’habillage. La propreté est en cours de présentation
+            avec le pot, et Maelyn s’y intéresse.
+        </p>
+
+        <h2>
+            Au niveau du comportement
+        </h2>
+
+        <p>
+            Non renseigné.
+        </p>
+
+        <h2>
+            Au niveau de la MDPH
+        </h2>
+
+        <p>
+            Non renseigné.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 4
+     ======================================================= -->
+
+<section class="document-page">
+
+    <div class="page-label">
+        Page 4
+    </div>
+
+    <div class="page-content">
+
+        <h2>
+            Au niveau médical
+        </h2>
+
+        <p>
+            Elle a présenté une gastro-entérite au cours de
+            l’année, sans hospitalisation.
+        </p>
+
+        <h2>
+            Au niveau des accompagnements et interventions
+        </h2>
+
+        <p>
+            Non renseigné.
+        </p>
+
+        <h2>
+            ATTENTES ET INQUIÉTUDES DE LA FAMILLE :
+        </h2>
+
+        <p>
+            Le parent se questionne sur le langage, qui a du
+            mal à se développer.
+        </p>
+
+        <h2>
+            EN CONSULTATION CE JOUR :
+        </h2>
+
+        <p>
+            Poids = 10,2 kg, Taille = 83 cm, PC = 46 cm.
+        </p>
+
+        <p>
+            L’auscultation cardio-pulmonaire est normale.
+            Le ventre est souple, indolore, sans organomégalie.
+        </p>
+
+        <p>
+            Les réflexes ostéotendineux sont positifs et
+            symétriques. Le RCP est en flexion. Pas de syndrome
+            pyramidal, pas de syndrome cérébelleux. Le crâne
+            est intègre. Les tympans sont propres, les dents
+            également.
+        </p>
+
+        <p>
+            En motricité globale, Maelyn est très à l’aise :
+            elle peut marcher, s’accroupir pour attraper le ballon,
+            se retourner, grimper sur les chaises. Elle peut
+            commencer à lancer le ballon et le pousser du pied.
+        </p>
+
+        <p>
+            En motricité fine, la pince fine est bien présente.
+            Ce jour, elle ne cherche pas à empiler les deux cubes ;
+            à la maison, elle semble pouvoir le faire, mais cela
+            reste encore assez ponctuel.
+        </p>
+
+        <p>
+            Avec le puzzle, elle peut remettre le rond, le carré
+            et le triangle, mais ne s’adapte pas au retournement
+            de la planche. Avec le crayon, elle gribouille
+            quelques instants.
+        </p>
+
+        <p>
+            En langage, je n’entends aucun mot, uniquement
+            quelques sons qui restent très rares. En revanche,
+            les précurseurs sont bien présents : les regards
+            adressés, l’attention conjointe et les pointages
+            sont possibles. Sa compréhension est bonne.
+        </p>
+
+        <p>
+            En comportement, en activité libre, Maelyn fait
+            des allers-retours entre la petite table et mon bureau,
+            où elle prend la cuillère et la tasse et les mélange,
+            mais il n’y a pas d’activité ni de scénario avec la
+            petite poupée. Elle fait principalement des allers-retours
+            pour s’asseoir à côté de moi puis repartir. Lorsque
+            les activités sont dirigées, elle peut rester concentrée.
+        </p>
+
+        <h2>
+            SYNTHÈSE MÉDICALE
+        </h2>
+
+        <p>
+            Au total, Maelyn, âgée de bientôt 2 ans, âge corrigé
+            18 mois, présente quelques fragilités dans le
+            développement du langage verbal, avec des précurseurs
+            non-verbaux bien présents et une agitation motrice.
+            La motricité globale est acquise et à l’aise.
+            La motricité fine est en cours de développement.
+            Le comportement en activité libre est marqué par des
+            allers-retours, avec une concentration possible lors
+            des activités dirigées.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PAGE 5
+     ======================================================= -->
+
+<section class="document-page">
+
+    <div class="page-label">
+        Page 5
+    </div>
+
+    <div class="page-content">
+
+        <h2>
+            PROPOSITIONS DU CAMSP
+        </h2>
+
+        <p>
+            Au CAMSP, je propose :
+        </p>
+
+        <ul>
+
+            <li>
+                Réalisation d’un bilan Bayley pour obtenir
+                une évaluation complète du langage, du
+                psychomoteur et du cognitif.
+            </li>
+
+            <li>
+                Revoir Maelyn après réalisation du bilan.
+            </li>
+
+        </ul>
+
+        <p>
+            Dans l’intervalle, le CAMSP reste disponible.
+        </p>
+
+        <h2>
+            ACCORD DE LA FAMILLE ET PPA
+        </h2>
+
+        <p>
+            [INFORMATION À COMPLÉTER :
+            ACCORD DE LA FAMILLE ET SIGNATURE DU PPA]
+        </p>
+
+        <h2>
+            PROCHAIN RENDEZ-VOUS
+        </h2>
+
+        <p>
+            Je reverrai donc Maelyn après réalisation du
+            bilan Bayley.
+        </p>
+
+        <p>
+            [INFORMATION À COMPLÉTER :
+            DATE DU PROCHAIN RENDEZ-VOUS OU ABSENCE
+            DE NOUVEAU RENDEZ-VOUS]
+        </p>
+
+        <p>
+            L’équipe du CAMSP reste disponible dans l’intervalle.
+        </p>
+
+        <p>
+            Bien confraternellement.
+        </p>
+
+        <p>
+            Pour l’équipe du CAMSP,
+        </p>
+
+        <p>
+            <strong>
+                Dr Renaud Chambon
+            </strong>
+        </p>
+
+        <p>
+            [INFORMATION À COMPLÉTER :
+            FONCTION DU MÉDECIN]
+        </p>
+
+        <p>
+            <em>
+                Document généré par Dicte.ai à l’aide d’un modèle
+                d’IA. Des erreurs peuvent subsister.
+                Vérification conseillée.
+            </em>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FORMULAIRE DE QUESTION
+     ======================================================= -->
+
+<section
+    class="question"
+    id="question">
+
+    <h2>
+        Une question sur ce document ?
+    </h2>
+
+    <p class="question-intro">
+        Utilisez ce formulaire pour préparer un message à
+        <strong>Johan Eyheraguibel</strong>.
+        Le bouton ouvre votre logiciel de messagerie avec
+        les informations saisies.
+    </p>
+
+
+    <div class="form-grid">
+
+        <div class="form-group">
+
+            <label for="qName">
+                Votre nom
+            </label>
+
+            <input
+                id="qName"
+                type="text"
+                placeholder="Nom et prénom">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="qEmail">
+                Votre adresse e-mail
+            </label>
+
+            <input
+                id="qEmail"
+                type="email"
+                placeholder="nom@exemple.fr">
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="qText">
+            Votre question
+        </label>
+
+        <textarea
+            id="qText"
+            placeholder="Écrivez votre question ici…"></textarea>
+
+    </div>
+
+
+    <div class="form-actions">
+
+        <button
+            class="btn btn-accent"
+            id="sendQuestion">
+
+            ✉ Envoyer ma question
+
+        </button>
+
+
+        <a
+            class="btn btn-secondary"
+            href="mailto:johan.eyheraguibel@apf.asso.fr">
+
+            Ouvrir un e-mail directement
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer class="footer">
+
+    APF France handicap — Pôle Enfance
+    <br>
+    Document source : compte-rendu généré par Dicte.ai.
+
+</footer>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
+<script>
+
+/* =========================================================
+   ENVOI DE LA QUESTION PAR E-MAIL
+   ========================================================= */
+
+document
+    .getElementById("sendQuestion")
+    .addEventListener("click", function () {
+
+        const name =
+            document
+                .getElementById("qName")
+                .value
+                .trim();
+
+        const email =
+            document
+                .getElementById("qEmail")
+                .value
+                .trim();
+
+        const question =
+            document
+                .getElementById("qText")
+                .value
+                .trim();
+
+
+        if (!question) {
+
+            alert(
+                "Merci de saisir votre question."
+            );
+
+            return;
+        }
+
+
+        const subject =
+            encodeURIComponent(
+                "Question — Suivi REVA d’un enfant prématuré à 18 mois"
+            );
+
+
+        const body =
+            encodeURIComponent(
+
+                "Bonjour Johan,\n\n"
+
+                +
+
+                (name
+                    ? "Nom : " + name + "\n"
+                    : "")
+
+                +
+
+                (email
+                    ? "E-mail : " + email + "\n\n"
+                    : "\n")
+
+                +
+
+                "Question :\n"
+
+                +
+
+                question
+
+                +
+
+                "\n\nEnvoyé depuis la page HTML du document."
+
+            );
+
+
+        window.location.href =
+            "mailto:johan.eyheraguibel@apf.asso.fr"
+            +
+            "?subject="
+            +
+            subject
+            +
+            "&body="
+            +
+            body;
+
+    });
+
+</script>
+
+
+</body>
+</html>
